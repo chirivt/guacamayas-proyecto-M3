@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Guacamaya Caraqueña</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #FFD700;
+      color: #1C1C1C;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    header, footer {
+      background-color: #FFD700;
+      padding: 10px;
+      text-align: center;
+    }
+    .menu a {
+      margin: 0 10px;
+      color: #1C1C1C;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .menu a:hover {
+      color: #FF4500;
+    }
+    .seccion {
+      padding: 30px 10px;
+      text-align: center;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 12px;
+      padding-bottom: 10px;
+      cursor: grab;
+    }
+    .carousel img {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      width: 100%;
+      max-width: 220px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .carousel img:hover {
+      transform: scale(1.05);
+    }
+    .button-container {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .button-container a {
+      background-color: #ff7043;
+      color: white;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      display: inline-block;
+    }
+    .button-container a:hover {
+      background-color: #e64a19;
+    }
+    .volver-btn {
+      margin-top: 30px;
+      display: inline-block;
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .volver-btn:hover {
+      background-color: #388e3c;
+    }
+    #trivia-volver {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+    #trivia-volver a {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #trivia-volver a:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>La Guacamaya Caraqueña</h1>
+    <nav class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#blog">Blog</a>
+      <a href="#galeria">Galería</a>
+      <a href="trivia.html" target="_blank">Trivia</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="seccion">
+      <h2>Inicio</h2>
+      <div class="carousel" id="carousel-inicio"></div>
+    </section>
+
+    <section id="blog" class="seccion">
+      <h2>Blog</h2>
+      <div class="carousel" id="carousel-blog"></div>
+    </section>
+
+    <section id="galeria" class="seccion">
+      <h2>Galería</h2>
+      <div class="carousel" id="carousel-galeria"></div>
+    </section>
+
+    <section class="button-container">
+      <a href="trivia.html" target="_blank">🎯 Jugar Trivia sobre Guacamayas</a>
+    </section>
+
+    <section id="contacto" class="seccion">
+      <h2>Contacto</h2>
+      <p>¿Quieres saber más? <a href="https://es.wikipedia.org/wiki/Guacamaya" target="_blank">Visita Wikipedia</a></p>
+    </section>
+
+    <div id="trivia-volver">
+      <a href="index.html">🏠 Volver a la Página Principal</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Guacamaya Caraqueña - Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const carousels = {
+      'carousel-inicio': [
+        'gua15.jpg',
+        'guacamaya caracas4.webp',
+        'guacamayas caracas.webp',
+        'guacamayas caracas1.webp'
+      ],
+      'carousel-blog': [
+        'gua11.jpg',
+        'gua12.jpg',
+        'gua13.jpg',
+        'gua14.jpg'
+      ],
+      'carousel-galeria': [
+        'gua1.jpg',
+        'gua2.jpg',
+        'gua3.jpg',
+        'gua4.jpg',
+        'gua5.jpg',
+        'gua6.jpg'
+      ]
+    };
+
+    for (const [id, images] of Object.entries(carousels)) {
+      const container = document.getElementById(id);
+      images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = src.split('.')[0];
+        container.appendChild(img);
+      });
+    }
+
+    document.querySelectorAll('.carousel').forEach(carousel => {
+      let isDragging = false, startX, scrollLeft;
+      carousel.addEventListener('mousedown', e => {
+        isDragging = true;
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+      });
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+      carousel.addEventListener('mousemove', e => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2;
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+    });
+  </script>
+</body>
+</html>
