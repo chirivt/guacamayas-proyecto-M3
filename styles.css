@@ -109,4 +109,14 @@ h1 {
   transform: scale(1.2);
 }
 
-
+.titulo-encapsulado {
+  display: inline-block;
+  background-color: #fff4c2;
+  color: #b82e1f;
+  padding: 20px 40px;
+  border-radius: 100px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 2em;
+  text-shadow: 1px 1px 1px #fff;
+  margin-bottom: 30px;
+}
