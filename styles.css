@@ -1,11 +1,11 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: url('modulo3/fondo-guacamaya.jpg') no-repeat center center fixed;
+   font-family: 'Segoe UI', sans-serif;
+  background: url('fondo pantalla.png') no-repeat center center fixed;
   background-size: cover;
+  color: #3b2c0a;
+  text-align: center;
   margin: 0;
   padding: 20px;
-  text-align: center;
-  color: #3b2c0a;
 }
 
 h1 {
@@ -23,7 +23,7 @@ h1 {
 
 #question-image {
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   height: auto;
   object-fit: cover;
   border-radius: 10px;
@@ -83,4 +83,13 @@ h1 {
   border-radius: 50%;
   cursor: pointer;
   font-size: 20px;
+}
+
+.bio, #quiz-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 30px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }

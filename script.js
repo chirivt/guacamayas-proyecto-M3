@@ -31,13 +31,13 @@ const questions = [
   },
   {
     question: "¿Qué tipo de ave es la guacamaya?",
-    image: "gua6.jpg",
+    image: "guaca20.jpg",
     options: ["Acuática", "Rapaz", "Psitácida"],
     answer: "Psitácida"
   },
   {
     question: "¿Cómo se comunican las guacamayas entre ellas?",
-    image: "gua11.jpg",
+    image: "gua6.jpg",
     options: ["Con señales de humo", "Con cantos y gritos", "Con aleteos"],
     answer: "Con cantos y gritos"
   },
