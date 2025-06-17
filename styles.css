@@ -1,0 +1,81 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('modulo3/fondo-guacamaya.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: #3b2c0a;
+}
+
+h1 {
+  color: #b82e1f;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+#quiz-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+#question-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+#options-container button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #f0c040;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#options-container button:hover {
+  background-color: #e58e26;
+}
+
+.hidden {
+  display: none;
+}
+
+#result-container {
+  padding: 20px;
+}
+
+.main-btn, #whatsapp-share {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.main-btn:hover, #whatsapp-share:hover {
+  background-color: #218838;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  padding: 10px;
+  border: none;
+  background-color: #444;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+}
