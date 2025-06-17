@@ -1,7 +1,7 @@
 const questions = [
   {
     question: "¿Cuál es la especie de guacamaya más común en Caracas?",
-    image: "gua1.jpg",
+    image: "guaca16.jpg",
     options: ["Guacamaya roja", "Guacamaya azul y amarilla", "Guacamaya verde"],
     answer: "Guacamaya azul y amarilla"
   },
@@ -13,13 +13,13 @@ const questions = [
   },
   {
     question: "¿Qué tan longevas pueden ser las guacamayas?",
-    image: "gua3.jpg",
+    image: "guaca17.jpg",
     options: ["5 años", "30 años", "Hasta 60 años o más"],
     answer: "Hasta 60 años o más"
   },
   {
     question: "¿Cuál es una amenaza importante para las guacamayas?",
-    image: "gua4.jpg",
+    image: "guaca18.jpg",
     options: ["El agua", "El viento", "El tráfico ilegal"],
     answer: "El tráfico ilegal"
   },
