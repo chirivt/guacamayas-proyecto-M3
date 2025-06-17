@@ -93,3 +93,20 @@ h1 {
   margin: 30px auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+.github-icon {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.github-icon img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.github-icon img:hover {
+  transform: scale(1.2);
+}
+
+
