@@ -57,21 +57,6 @@ h1 {
   padding: 20px;
 }
 
-.main-btn, #whatsapp-share {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 10px;
-  text-decoration: none;
-  background-color: #28a745;
-  color: white;
-  border-radius: 10px;
-  transition: background 0.3s;
-}
-
-.main-btn:hover, #whatsapp-share:hover {
-  background-color: #218838;
-}
-
 #scrollTopBtn {
   position: fixed;
   bottom: 15px;
